@@ -9,10 +9,9 @@
 #include <cstring>
 #include <iterator>
 
-// using namespace std;
 const inline short MAXL {500};
 
-namespace MyScope             //Self defined strstr() method
+namespace MyScope                           //Self defined strstr() method
 {
   char *strstr(const char*, const char*);
 }
@@ -34,19 +33,19 @@ int main(int argc, char *argv[])
     else
     {
       std::cerr<<"\nInvalid option.\n";
-      return 1;
+      return 1; 
     }
   }
 
-  if (argc < 2 )              //If no search string is specified...
+  if (argc < 2 )                            //If no search string is specified...
   {
     std::cerr<<"\nNo search string specified.\n";
-    return (1);
-  }                         //...print an error message and exit.
+    return 1;
+  }                                         //...print an error message and exit.
 
 
-  char line[MAXL],               //A line of text
-      *pattern { argv[1] };       //The pattern to be searched for
+  char line[MAXL],                          //A line of text
+      *pattern { argv[1] };                 //The pattern to be searched for
 
   auto lengthOfLine = std::strlen(argv[2]);
   int lineNr = 0;
